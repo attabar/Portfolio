@@ -1,0 +1,320 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.nav-bar:hover .bar:nth-child(3){
+    display: none;
+}
+.nav-bar:hover .bar:nth-child(2){
+    transform: rotate(45deg);
+    
+}
+.nav-bar:hover .bar:nth-child(1){
+    transform: rotate(-45deg);
+    
+}
+.bar-container{
+    background-color: aqua;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+.bar{
+    background-color: black;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 5px;
+    transition: transform 0.5s ease-in-out;
+}
+h1{
+    text-shadow: -1px 0px black, -1px 0px black, 0px -1px black;
+}
+#onLargeScreen ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin-right: 15px;
+}
+nav ul li{
+    margin-right: 25px;
+}
+nav ul li a {
+    text-decoration: none;
+    font-size: 17px;
+}
+nav ul li a:hover{
+    color: aliceblue;
+    font-weight: 900;
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.hero{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.hero img{
+    width: 250px;
+    background-color: black;
+    border-radius: 50%;
+}
+.hero .aboutme p{
+    line-height: 35px;
+}
+#onSmallScreen{
+    display: none;
+}
+
+.services{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.services > div{
+    flex: 0 1 calc(33.33% - 20px);
+    /* width: 250px; */
+    max-width: calc(3333.33% - 20px);
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    /* height: 200px; */
+    background: aqua;
+    text-align: center;
+    border-radius: 5px;
+    /* 1. horizontal 2. vertical 3. blur(dishi-dishi) 4. spread 5. shadow color */
+    box-shadow: 5px 5px 5px 5px lightblue;
+    z-index: -1;
+    transition: width 2s;
+}
+.services > div:hover{
+    width: 300px;
+}
+
+#about img{
+    background-image: repeating-radial-gradient(red, yellow, black);
+    transition: gradient 2s;
+    color: aliceblue;
+}
+#about{
+    background-image: linear-gradient(to bottom, rgba(225,0,0,0),  rgba(0,0,0,0.5));
+    padding: 15px;
+    border-radius: 10px;
+}
+.services div img{
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+#skills div{
+    width: 50px;
+    height: 90px;
+    border-radius: 50%;
+    transform: scale(1,1);
+    z-index: -1;
+}
+#testimonials div{
+    transform: skewY(20deg);
+}
+#testimonials div img{
+    border-radius: 50%;
+}
+
+.footer{
+    background-color: black;
+    padding: 50px;
+    margin-top: 50px;
+    color: aliceblue;
+}
+.education{
+    display: flex;
+    justify-content:space-around;
+}
+.vertical-line1, .vertical-line2{
+    background-color: aqua;
+    height: 70vh;
+    width: 10px;
+}
+
+/* on large Device */
+@media screen and (min-width: 1200px){
+.nav-bar{
+    display: none;
+}
+.nav-container{
+    padding: 5px;
+}
+nav ul{
+    display: block;
+}
+.contact{
+    background-color:antiquewhite;
+    width: 600px;
+    padding: 50px;
+    transform: translate(300px,0px);
+    border-radius: 5px;
+}
+label{
+    letter-spacing: 5px;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+}
+input[type='text'],input[type='email']{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+textarea{
+    padding-right: 260px;
+    padding-bottom: 20px;
+}
+button{
+    width: 70px;
+    background-color: blue;
+    color: aliceblue;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
+}
+.thankYou h2{
+    position: relative;
+    animation-name: thankingemoji;
+    animation-duration: 8s;
+    animation-duration: 2s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+.thankYou{
+    text-align: center;
+}
+@keyframes thankingemoji {
+    0%{left: 0x;}
+    25%{left: 200px; top: 0px;}
+    50%{left: 200px; top: 90px;}
+    75%{left: 0px; top: 90px;}
+    100%{left: 0px; top: 0px;}
+}
+.contact-heading{
+    text-align: center;
+    letter-spacing: 5px;
+}
+.footer .flex-children{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.footer div{
+    text-align: center;
+    line-height: 30px;
+    flex: 1;
+}
+.footer .copyright{
+    margin-top: 35px;
+    word-spacing: 5px;
+    letter-spacing: 5px;
+}
+
+}
+
+/* on Small device */
+@media screen and (max-width: 569px){
+    nav{
+        display: none;
+    }
+    #onSmallScreen{
+        z-index: 1;
+        margin: 0;
+    }
+    #onSmallScreen ul li{
+        margin-bottom: 15px;
+        list-style: none;
+        text-align: center;
+    }
+    #onSmallScreen ul li a{
+        color: black;
+        font-weight: 900;
+    }
+    #onSmallScreen ul li a:hover{
+        color: aliceblue;
+    }
+    .hero{
+        display: flex;
+        justify-content: space-between;
+    }
+    .hero img{
+        width: 150px;
+        background-color: black;
+        border-radius: 50%;
+    }
+    .hero .aboutme p{
+        line-height: 25px;
+    }
+    .contact{
+        background-color: antiquewhite;
+        border-radius: 5px;
+        width: 100%;
+        padding: 40px;
+        /* transform: translate(40px, 0px); */
+    }
+    .contact .contact-heading{
+        text-align: center;
+        letter-spacing: 5px;
+    }
+    .col{
+        display: flex;
+        flex-direction: column;
+    }
+
+    input[type='text'],input[type='email']{
+        width: 70%;
+        padding: 7px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+    }
+    input[type='text'], input[type='email'], textarea, label, button{
+        transform: translate(40px,0px);
+    }
+    textarea{
+        width: 70%;
+    }
+    button{
+        width: 70px;
+        padding: 7px;
+        background-color: blue;
+        color: aliceblue;
+        border-radius: 50px;
+        border: none;
+    }
+    .thankYou{
+        text-align: center;
+        /* background-color: red; */
+    }
+    .thankYou h2{
+        position: relative;
+        animation-name: thankingemoji;
+        animation-duration: 4s;
+    }
+    @keyframes thankingemoji {
+        0%{left: 0x;}
+    }
+    .footer{
+        text-align: center;
+    }
+    .footer div{
+        margin-bottom: 15px;
+    }
+}
